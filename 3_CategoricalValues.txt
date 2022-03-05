@@ -1,0 +1,7 @@
+import pandas as pd
+info = {
+ 'Gender' : ['male', 'female', 'female', 'male', 'female', 'female'],
+ 'Position' : ['CEO', 'Cleaner', 'Employee', 'Cleaner', 'CEO', 'Cleaner']
+}
+df = pd.DataFrame(info)
+print(df)

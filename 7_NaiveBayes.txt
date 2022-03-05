@@ -1,0 +1,17 @@
+import pandas as pd
+import numpy as np
+from sklearn import datasets
+iris = datasets.load_iris() # importing the dataset
+iris.data # showing the iris data
+X=iris.data #assign the data to the X
+y=iris.target #assign the target/flower type to the y
+print (X.shape)
+print (y.shape)
+from sklearn.model_selection import train_test_split
+X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=0.2,random_state=9) #Split the dataset
+from sklearn.naive_bayes import GaussianNB
+nv = GaussianNB() # create a classifier
+nv.fit(X_train,y_train) # fitting the data
+from sklearn.metrics import accuracy_score
+y_pred = nv.predict(X_test) # store the prediction data
+accuracy_score(y_test,y_pred) # calculate the accuracy
